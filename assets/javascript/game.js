@@ -26,11 +26,22 @@ function setup(){
   console.log(crystalNum4)
 
   document.getElementById("randomNumber").innerText = randomNumber
+
+  //adding the Crystal images, giving: img tag, class, img src, data and append to html 
+  var crystal1 = $("<img>");
+  crystal1.addClass("crystal1-image");
+  crystal1.attr("src" , "../images/crystal1.png");
+  crystal1.attr("data-crystal1value" , crystalNum1);
+  $("crystals").append(crystal1);
+
+  $("crystal1-image").click(function(){
+    var crystal1Value = ($(this).attr("data-crystal1value"));
+    crystal1Value = parseInt(crystal1Value)
+  });
+
+  score += crystal1Value;
+
 };
 setup();
 
-//adding the Crystal images, giving: img tag, class, 
-var crystal = $("<img>");
-crystal.addclass("crystals-image");
-crystal.attr("src", ".assets/images/crystal1.png");
 
