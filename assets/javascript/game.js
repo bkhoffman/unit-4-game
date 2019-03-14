@@ -29,4 +29,8 @@ function setup(){
 };
 setup();
 
+//adding the Crystal images, giving: img tag, class, 
+var crystal = $("<img>");
+crystal.addclass("crystals-image");
+crystal.attr("src", ".assets/images/crystal1.png");
 
