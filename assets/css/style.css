@@ -6,7 +6,6 @@ h1{
 
 body{ 
   background-image: url(../images/darkness.png);
-  
 }
 
 .instructions {
@@ -38,6 +37,7 @@ body{
   color: white;
   background-color: rgb(236, 13, 13);
 }
+
 #scoreBox{
   padding: 30px;
   text-align: center;
