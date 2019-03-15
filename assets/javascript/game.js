@@ -55,7 +55,11 @@ function setup(){
   $("#crystal4").html(crystal4);
 };
 
-setup();
+
+
+// below allows EACH crystal to be clicked and add the random value assign from above to add to the score
+// then compare score to random number and trigger win/lose
+// and trigger setup fuction to reset the game
 
 $("#crystal1").on("click" , function(){
   // var crystal1Value = ($(this).attr("data-crystal1value"));
@@ -64,12 +68,12 @@ $("#crystal1").on("click" , function(){
   score += crystalNum1;
   $("#scoreBox").html(score);
   if(score === randomNumber){
-    $("#winLoseBox").html("You Win!")
+    $("#result").html("You Win!")
     wins++
     $("#winCount").html(wins);
     setup();
   }else if(score > randomNumber){
-    $("#winLoseBox").html("You Lose :(")
+    $("#result").html("You Lose :(")
     loses++
     $("#loseCount").html(loses);
     setup();
@@ -82,12 +86,12 @@ $("#crystal2").on("click" , function(){
   score += crystalNum2;
   $("#scoreBox").html(score);
   if(score === randomNumber){
-    $("#winLoseBox").html("You Win!")
+    $("#result").html("You Win!")
     wins++
     $("#winCount").html(wins);
     setup();
   }else if(score > randomNumber){
-    $("#winLoseBox").html("You Lose :(")
+    $("#result").html("You Lose :(")
     loses++
     $("#loseCount").html(loses);
     setup();
@@ -100,12 +104,12 @@ $("#crystal3").on("click" , function(){
   score += crystalNum3;
   $("#scoreBox").html(score);
   if(score === randomNumber){
-    $("#winLoseBox").html("You Win!")
+    $("#result").html("You Win!")
     wins++
     $("#winCount").html(wins);
     setup();
   }else if(score > randomNumber){
-    $("#winLoseBox").html("You Lose :(")
+    $("#result").html("You Lose :(")
     loses++
     $("#loseCount").html(loses);
     setup();
@@ -118,17 +122,40 @@ $("#crystal4").on("click" , function(){
   score += crystalNum4;
   $("#scoreBox").html(score);
   if(score === randomNumber){
-    $("#winLoseBox").html("You Win!")
+    $("#result").html("You Win!")
     wins++
     $("#winCount").html(wins);
     setup();
   }else if(score > randomNumber){
-    $("#winLoseBox").html("You Lose :(")
+    $("#result").html("You Lose :(")
     loses++
     $("#loseCount").html(loses);
     setup();
   }
 });
+
+setup();
+
+//idea below to condense
+// $("#crystals").click(function(){
+//   $("#crystal1")
+//   $("#crystal2")
+//   $("#crystal3")
+//   $("#crystal4")
+//   score += crystalNum4;
+//   $("#scoreBox").html(score);
+//   if(score === randomNumber){
+//     $("#winLoseBox").html("You Win!")
+//     wins++
+//     $("#winCount").html(wins);
+//     setup();
+//   }else if(score > randomNumber){
+//     $("#winLoseBox").html("You Lose :(")
+//     loses++
+//     $("#loseCount").html(loses);
+//     setup();
+//   }
+// });
 
 
 

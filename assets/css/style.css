@@ -1,9 +1,16 @@
 h1{
+  color: white;
   padding: 20px 0px;
   text-align: center;
 }
 
+body{ 
+  background-image: url(../images/darkness.png);
+  
+}
+
 .instructions {
+  margin-bottom: 50px;
   color: white;
   background-color: rgb(26, 169, 226);
   width: 90%;
@@ -19,7 +26,7 @@ h1{
 }
 
 #winLoseBox{
-  padding: 10px 20px 25px 20px;
+  padding: 14px 20px 14px 20px;
   color: white;
   background-color: green;
 }
@@ -39,6 +46,7 @@ h1{
   background-color: rgb(236, 13, 13);
 }
 
-#crystal1{
-  width: 50px;
+img{
+  align-content: center;
+  width: 100%;
 }
