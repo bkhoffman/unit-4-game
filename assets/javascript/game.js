@@ -30,18 +30,20 @@ function setup(){
   //adding the Crystal images, giving: img tag, class, img src, data and append to html 
   var crystal1 = $("<img>");
   crystal1.addClass("crystal1-image");
-  crystal1.attr("src" , "../images/crystal1.png");
+  crystal1.attr("src", "assets/images/crystal1.png"); //not working
   crystal1.attr("data-crystal1value" , crystalNum1);
-  $("crystals").append(crystal1);
+  $("#crystals").append(crystal1);
 
-  $("crystal1-image").click(function(){
-    var crystal1Value = ($(this).attr("data-crystal1value"));
-    crystal1Value = parseInt(crystal1Value)
-  });
-
-  score += crystal1Value;
 
 };
 setup();
+
+$("crystal1-image").click(function(){
+  var crystal1Value = ($(this).attr("data-crystal1value"));
+  crystal1Value = parseInt(crystal1Value)
+
+  score += crystal1Value;
+});
+
 
 
