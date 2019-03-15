@@ -13,7 +13,7 @@ body{
   margin-bottom: 50px;
   color: white;
   background-color: rgb(26, 169, 226);
-  width: 90%;
+  width: 95%;
   padding: 1ex
 }
 
@@ -32,14 +32,14 @@ body{
 }
 
 #scoreIs{
-  padding: 42px 20px;
+  padding: 52px 20px;
   text-align: center;
   font-size: 2.5ex;
   color: white;
   background-color: rgb(236, 13, 13);
 }
 #scoreBox{
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   font-size: 6ex;
   color: white;
@@ -47,6 +47,15 @@ body{
 }
 
 img{
+  margin: 20px 0px;
   align-content: center;
   width: 100%;
+
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
 }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+

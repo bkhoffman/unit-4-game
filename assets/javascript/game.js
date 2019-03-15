@@ -35,6 +35,7 @@ function setup(){
   crystal1.attr("src", "assets/images/crystal1.png");
   //crystal1.attr("data-crystal1value" , crystalNum1);
   $("#crystal1").html(crystal1);
+  $('#crystal1').animate({rotate: '30deg'}, 1000);
 
   var crystal2 = $("<img>");
   //crystal2.addClass("crystal2-image");
@@ -54,72 +55,43 @@ function setup(){
   //crystal4.attr("data-crystal1value" , crystalNum4);
   $("#crystal4").html(crystal4);
 };
+setup();
 
-
-
-// below allows EACH crystal to be clicked and add the random value assign from above to add to the score
-// then compare score to random number and trigger win/lose
-// and trigger setup fuction to reset the game
+// below allows EACH crystal to be clicked and add the random value assigned from above, to the score
+// then run the checkScore function
 
 $("#crystal1").on("click" , function(){
   // var crystal1Value = ($(this).attr("data-crystal1value"));
   // crystal1Value = parseInt(crystal1Value)
   console.log("score checker", crystalNum1);
   score += crystalNum1;
-  $("#scoreBox").html(score);
-  if(score === randomNumber){
-    $("#result").html("You Win!")
-    wins++
-    $("#winCount").html(wins);
-    setup();
-  }else if(score > randomNumber){
-    $("#result").html("You Lose :(")
-    loses++
-    $("#loseCount").html(loses);
-    setup();
-  }
+  checkScore();
 });
 $("#crystal2").on("click" , function(){
   // var crystal1Value = ($(this).attr("data-crystal1value"));
   // crystal1Value = parseInt(crystal1Value)
   console.log("score checker", crystalNum2);
   score += crystalNum2;
-  $("#scoreBox").html(score);
-  if(score === randomNumber){
-    $("#result").html("You Win!")
-    wins++
-    $("#winCount").html(wins);
-    setup();
-  }else if(score > randomNumber){
-    $("#result").html("You Lose :(")
-    loses++
-    $("#loseCount").html(loses);
-    setup();
-  }
+  checkScore();
 });
 $("#crystal3").on("click" , function(){
   // var crystal1Value = ($(this).attr("data-crystal1value"));
   // crystal1Value = parseInt(crystal1Value)
   console.log("score checker", crystalNum3);
   score += crystalNum3;
-  $("#scoreBox").html(score);
-  if(score === randomNumber){
-    $("#result").html("You Win!")
-    wins++
-    $("#winCount").html(wins);
-    setup();
-  }else if(score > randomNumber){
-    $("#result").html("You Lose :(")
-    loses++
-    $("#loseCount").html(loses);
-    setup();
-  }
+  checkScore();
 });
 $("#crystal4").on("click" , function(){
   // var crystal1Value = ($(this).attr("data-crystal1value"));
   // crystal1Value = parseInt(crystal1Value)
   console.log("score checker", crystalNum4);
   score += crystalNum4;
+  checkScore();
+});
+
+// after check win/lose, run setup fuction to reset the game after adding to win/lose count
+
+function checkScore(){
   $("#scoreBox").html(score);
   if(score === randomNumber){
     $("#result").html("You Win!")
@@ -132,34 +104,5 @@ $("#crystal4").on("click" , function(){
     $("#loseCount").html(loses);
     setup();
   }
-});
-
-setup();
-
-//idea below to condense
-// $("#crystals").click(function(){
-//   $("#crystal1")
-//   $("#crystal2")
-//   $("#crystal3")
-//   $("#crystal4")
-//   score += crystalNum4;
-//   $("#scoreBox").html(score);
-//   if(score === randomNumber){
-//     $("#winLoseBox").html("You Win!")
-//     wins++
-//     $("#winCount").html(wins);
-//     setup();
-//   }else if(score > randomNumber){
-//     $("#winLoseBox").html("You Lose :(")
-//     loses++
-//     $("#loseCount").html(loses);
-//     setup();
-//   }
-// });
-
-
-
-
-
-
-
+};
+  
